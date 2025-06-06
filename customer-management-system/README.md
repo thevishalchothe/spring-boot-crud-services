@@ -8,9 +8,50 @@ The **Customer Management System** is a backend service designed to perform basi
 
 ##  Features 📝 
 
-- Create, Read, Update, and Delete (CRUD) customer records  
-- RESTful API endpoints  
-- Layered architecture (Controller, Service, Repository)  
-- Spring Boot with Maven/Gradle  
-- Unit testing with JUnit and Mockito (optional)  
-- Swagger/OpenAPI documentation (optional)
+- Create, read, update, and delete customer records
+- Upload Aadhar card as file with customer data
+- RESTful API design using Spring Boot
+- Layered architecture (Controller, Service, Repository)
+- Global exception handling using `@RestControllerAdvice`
+- `.gitignore` configured for clean version control
+- Maven-based build and dependency management
+- Swagger/OpenAPI ready (optional integration)
+
+---
+
+## Technologies Used 🚀 
+
+- Java 17+
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Maven
+- H2 / MySQL (configurable)
+- Swagger / OpenAPI (optional)
+
+  ---
+
+## How to Run
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/vishal-chothe-patil/spring-boot-crud-services.git
+   ```
+   
+2. **Navigate to the project directory**
+
+    ```bash
+    cd spring-boot-crud-services
+    ```
+
+3.  **Build and run the application**
+
+    ```bash
+    mvn spring-boot:run
+    ```
+
+4. **Access the API**
+    
+    ```bash
+    http://localhost:8080/api/customers
+    ```
