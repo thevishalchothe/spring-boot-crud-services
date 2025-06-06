@@ -1,5 +1,6 @@
 package com.killerexpertise.crud.example.service.impl;
 
+import com.killerexpertise.crud.example.exception.CustomerNotFoundException;
 import com.killerexpertise.crud.example.model.Customer;
 import com.killerexpertise.crud.example.repository.CustomerRepository;
 import com.killerexpertise.crud.example.service.CustomerServiceI;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -31,12 +33,12 @@ public class CustomerServiceImpl implements CustomerServiceI {
     @Override
     public Customer getById(Long id) {
         return customerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Customer with ID " + id + " not found"));
+                .orElseThrow(() -> new CustomerNotFoundException("Customer with ID " + id + " not found"));
     }
 
     @Override
     public Customer updateCustomer(Long id, Customer updatedCustomer, MultipartFile file) throws IOException {
-        Customer existing = getById(id); // throws RuntimeException if not found
+        Customer existing = getById(id); // throws exception if not found
         existing.setName(updatedCustomer.getName());
         existing.setEmail(updatedCustomer.getEmail());
         existing.setMobile(updatedCustomer.getMobile());
@@ -51,7 +53,7 @@ public class CustomerServiceImpl implements CustomerServiceI {
 
     @Override
     public boolean deleteCustomer(Long id) {
-        Customer existing = getById(id); // throws RuntimeException if not found
+        Customer existing = getById(id); // throws exception if not found
         customerRepository.delete(existing);
         return true;
     }
