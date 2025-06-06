@@ -21,13 +21,12 @@ The **Customer Management System** is a backend service designed to perform basi
 
 ## Technologies Used 🚀 
 
-- Java 17+
-- Spring Boot
-- Spring Web
-- Spring Data JPA
-- Maven
-- H2 / MySQL (configurable)
-- Swagger / OpenAPI (optional)
+  - Java 17+
+  - Spring Boot
+  - Spring Data JPA
+  - Maven
+  - H2 / MySQL (configurable)
+  - Swagger / OpenAPI (optional)
 
   ---
 
@@ -55,3 +54,26 @@ The **Customer Management System** is a backend service designed to perform basi
     ```bash
     http://localhost:8080/api/customers
     ```
+
+---
+
+## API Endpoints 📫 
+
+| Method | Endpoint                 | Description                      |
+|--------|--------------------------|----------------------------------|
+| POST   | `/api/customers`         | Create customer with file upload |
+| GET    | `/api/customers/get-all` | Get all customers                |
+| GET    | `/api/customers/{id}`    | Get customer by ID               |
+| PUT    | `/api/customers/{id}`    | Update customer with file        |
+| DELETE | `/api/customers/{id}`    | Delete customer by ID            |
+
+---
+
+## Future Enhancements 🔄 
+
+- Add Swagger UI for interactive API documentation  
+- Add field validations using annotations  
+- Integrate user authentication & authorization  
+- Implement pagination and filtering  
+- Build a frontend in Angular or React
+
