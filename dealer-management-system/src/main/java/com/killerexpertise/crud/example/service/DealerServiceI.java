@@ -12,4 +12,7 @@ public interface DealerServiceI {
 
     List<Dealer> getAllDealers();
 
+    Dealer updateDealer(Long id, Dealer dealer);
+
+    void deleteDealer(Long id);
 }

@@ -30,4 +30,21 @@ public class DealerServiceImpl implements DealerServiceI {
         return dealerRepository.findAll();
     }
 
+    @Override
+    public Dealer updateDealer(Long id, Dealer dealer) {
+        Dealer existing = dealerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Dealer not found with id: " + id));
+        existing.setName(dealer.getName());
+        existing.setLocation(dealer.getLocation());
+        existing.setContactNumber(dealer.getContactNumber());
+        existing.setEmail(dealer.getEmail());
+        existing.setInventoryStatus(dealer.getInventoryStatus());
+        return dealerRepository.save(existing);
+    }
+
+    @Override
+    public void deleteDealer(Long id) {
+        dealerRepository.deleteById(id);
+    }
+
 }

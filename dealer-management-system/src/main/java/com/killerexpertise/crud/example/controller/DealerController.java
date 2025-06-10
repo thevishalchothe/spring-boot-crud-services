@@ -30,4 +30,15 @@ public class DealerController {
         return ResponseEntity.ok(dealerServiceI.getAllDealers());
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Dealer> updateDealer(@PathVariable Long id, @RequestBody Dealer dealer) {
+        return ResponseEntity.ok(dealerServiceI.updateDealer(id, dealer));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteDealer(@PathVariable Long id) {
+        dealerServiceI.deleteDealer(id);
+        return ResponseEntity.ok("Dealer deleted successfully");
+    }
+
 }
