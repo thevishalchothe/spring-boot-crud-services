@@ -1,5 +1,6 @@
 package com.killerexpertise.crud.example.service.impl;
 
+import com.killerexpertise.crud.example.exception.DealerNotFoundException;
 import com.killerexpertise.crud.example.model.Dealer;
 import com.killerexpertise.crud.example.repository.DealerRepository;
 import com.killerexpertise.crud.example.service.DealerServiceI;
@@ -22,7 +23,7 @@ public class DealerServiceImpl implements DealerServiceI {
     @Override
     public Dealer getDealerById(Long id) {
         return dealerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Dealer not found with id: " + id));
+                .orElseThrow(() -> new DealerNotFoundException("Dealer not found with id: " + id));
     }
 
     @Override
@@ -33,7 +34,7 @@ public class DealerServiceImpl implements DealerServiceI {
     @Override
     public Dealer updateDealer(Long id, Dealer dealer) {
         Dealer existing = dealerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Dealer not found with id: " + id));
+                .orElseThrow(() -> new DealerNotFoundException("Dealer not found with id: " + id));
         existing.setName(dealer.getName());
         existing.setLocation(dealer.getLocation());
         existing.setContactNumber(dealer.getContactNumber());
@@ -44,7 +45,9 @@ public class DealerServiceImpl implements DealerServiceI {
 
     @Override
     public void deleteDealer(Long id) {
+        if (!dealerRepository.existsById(id)) {
+            throw new DealerNotFoundException("Dealer not found with id: " + id);
+        }
         dealerRepository.deleteById(id);
     }
-
 }
