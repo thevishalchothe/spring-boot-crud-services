@@ -58,6 +58,8 @@ Visit
     ```
  via Postman or Swagger.
 
+---
+
 ## Example JSON Payload
 
     ```json
@@ -71,3 +73,17 @@ Visit
       "inventoryStatus": "Active"
     }
     ```
+
+---
+
+## Project Summary 📝
+
+- Developed using Spring Boot, Spring Data JPA, and Lombok to ensure clean and maintainable code.
+- Built RESTful APIs to support Create, Read, Update, and Delete (CRUD) operations for dealer management.
+- Organized into modular layers including Controller, Service, Repository, and Model.
+- Dealer entity includes key fields such as name, location, contact number, email, and inventory status.
+- Implemented a custom exception (DealerNotFoundException) for clean and reusable error handling.
+- Added global exception handling using @RestControllerAdvice to return consistent and informative error responses.
+- Used ResponseEntity to provide proper HTTP status codes and structured API responses.
+- Tested and validated API endpoints using tools like Postman.
+- Designed to be easily extendable for future features like vehicle inventory integration or loan assignment.
