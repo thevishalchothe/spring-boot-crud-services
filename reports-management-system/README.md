@@ -67,3 +67,23 @@ Update application.properties
   ```
 ---
 
+## Project Summary 📌 
+
+`Reports Management System` is a project example that:  
+
+  -  **Automates report generation** for loan performance, defaults, and business analytics.
+  -  **Provides REST APIs** for CRUD operations with JWT authentication.
+  -  **Categorizes reports** by types (`LOAN_PERFORMANCE`, `DEFAULT_ANALYTICS`, etc.).
+  -  **Supports scheduling** for recurring reports (daily/weekly/monthly).
+  -  **Tracks audit trails** (creator, timestamp, and storage path).
+  -  **Uses Spring Boot 3 + PostgreSQL** with Lombok for clean code.
+  -  **Ready for extensions**: Email alerts, dashboards, and advanced filters.  
+
+**Goal**: Replace manual reporting with a scalable, self-service system.  
+
+---
+
+## Future Enhancements 📅 
+  -  Email Notifications: Auto-send reports to stakeholders.
+  -  Dashboard Integration: Visualize report data.
+  -  Advanced Filters: Support date ranges, dealer IDs, etc.
