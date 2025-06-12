@@ -15,3 +15,59 @@ The Dealer Management System is a backend service designed to perform CRUD opera
 - Soft delete dealers (mark inactive)
 - Clean RESTful APIs with meaningful responses
 - Modular and maintainable architecture
+
+---
+
+## 🔗 REST API Endpoints
+
+| Method | Endpoint            | Description              |
+|--------|---------------------|--------------------------|
+| POST   | `/api/dealers`      | Create a new dealer      |
+| GET    | `/api/dealers`      | Get list of all dealers  |
+| GET    | `/api/dealers/{id}` | Get dealer by ID         |
+| PUT    | `/api/dealers/{id}` | Update dealer details    |
+| DELETE | `/api/dealers/{id}` | Delete dealer by ID      |
+
+All responses are wrapped with appropriate HTTP status codes and error messages via `ResponseEntity`.
+
+---
+
+## How to Run
+
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/your-username/dealer-management-system.git
+
+   ```
+
+2. **Navigate into project**
+
+    ```bash
+    cd dealer-management-system
+    ```
+3. **Build and run**
+
+    ```bash
+    mvn clean install
+    mvn spring-boot:run
+    ```
+4. **Access APIs**
+Visit
+    ```
+     http://localhost:8080/api/dealers
+    ```
+ via Postman or Swagger.
+
+## Example JSON Payload
+
+    ```json
+    Copy
+    Edit
+    {
+      "name": "ABC Motors",
+      "location": "Pune",
+      "contactNumber": "9876543210",
+      "email": "abc@dealers.com",
+      "inventoryStatus": "Active"
+    }
+    ```
